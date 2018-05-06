@@ -1,5 +1,4 @@
-let input1 = (input) =>{ 
-    document.getElementById("userinput").value;
-    input1.textContent = input.textcontent;
-}
-console.log(input1);
+let input1 = document.querySelector('button').addEventListener('click',function(){
+    console.log('did this work');
+})
+
