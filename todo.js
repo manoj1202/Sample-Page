@@ -14,12 +14,12 @@ const addText = () => {
         removeText.textContent='x';
         
         document.getElementById('head1').appendChild(removeText);
-        // removeText.addEventListener('click',function(){
-        //     for(let todo in toDoList)
-        //     {
-        //         myTodo.innerHTML = `<del>${toDoList[todo]} </del>` ;
-        //     }
-        // })
+        removeText.addEventListener('click',function(){
+            for(let todo in toDoList)
+            {
+                myTodo.innerHTML = `<del>${toDoList[todo]} </del>` ;
+            }
+        })
     }
     
 }
