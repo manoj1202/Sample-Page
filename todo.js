@@ -1,65 +1,23 @@
-// document.querySelector('#input').addEventListener('input',function(e){
-//     console.log(e.target.value)
-// })
-
-// document.querySelector('#form1').addEventListener('submit', function(e){
-//     e.preventDefault();
-//     let a = [];
-//     const p = document.createElement('p');
-//     p.textContent = e.target.elements.todoValue.value ;
-//     document.querySelector('#head1').appendChild(p);
-
-//     a.push(e.target.elements.todoValue.value);
-
-
-//     console.log(a);
-//     e.target.elements.todoValue.value = '';
-// })
-
-let toDoList = ['Hit the gym', 'Pay Bill', 'Meet George'];
-let myTodo = document.getElementById('TODO');
-
-const renderList = () => {
-    myTodo.innerHTML = '';
-
-    for (const todo of toDoList) {
-
-        const p = document.createElement('p');
-        p.textContent = todo;
-        myTodo.appendChild(p);
-
-        const Delete = document.createElement('button');
-
-        myTodo.appendChild(Delete);
-    }
-}
-
-// Delete.addEventListener('click', function () {
-//     let text = toDoList;
-//     let index = text.length;
-//     console.log(text);
-//     console.log(index);
-// })
-
-const addTodo = () => {
-    const addTodo = document.getElementById('data').value;
-    if (addTodo !== '' && addTodo !== ' ') {
-        toDoList.push(addTodo);
-        renderList();
-        // const p  =   document.createElement('p');
-
-        // p.textContent = addTodo;
-
-        // myTodo.appendChild(p);
+const toDoList = [];
+const addText = () => {
+    const text = document.getElementById('data').value;
+    if(text !== '' && text !== ' ')
+    {
+        toDoList.push(text);
+        const myTodo = document.createElement('div');
+        myTodo.textContent = text;
         
+        document.getElementById('head1').appendChild(myTodo);
+        const removeText = document.createElement('button');
+        removeText.textContent='x';
+        document.getElementById('head1').appendChild(removeText);
+
     }
-    document.getElementById('data').value = '';
+    console.log(toDoList);
 }
 
-
-document.getElementById('press').addEventListener('click', function (e) {
+document.getElementById('press').addEventListener('click', (e) =>{
     e.preventDefault();
-    addTodo();
+    addText();
+    document.getElementById('data').value = '';
 })
-renderList();
-console.log(toDoList);
