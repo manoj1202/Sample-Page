@@ -11,7 +11,7 @@ const addText = () => {
         document.getElementById('head1').appendChild(myTodo);
         const removeText = document.createElement('button'); 
         removeText.textContent='x';
-        removeText.id = 'remove';
+        
         document.getElementById('head1').appendChild(removeText);
         removeText.addEventListener('click',function(){
             for(let todo in toDoList)
