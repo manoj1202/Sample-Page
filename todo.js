@@ -1,9 +1,10 @@
 const toDoList = [];
-const myTodo = document.createElement('div');
 const addText = () => {
     const text = document.getElementById('data').value;
     if(text !== '' && text !== ' ')
     {
+        const myTodo = document.createElement('div');
+
         toDoList.push(text);
         
         myTodo.textContent = text;
