@@ -8,12 +8,18 @@ const addText = () => {
         myTodo.textContent = text;
         
         document.getElementById('head1').appendChild(myTodo);
-        const removeText = document.createElement('button');
+        const removeText = document.createElement('button'); 
         removeText.textContent='x';
+        removeText.id = 'remove';
         document.getElementById('head1').appendChild(removeText);
-
+        removeText.addEventListener('click',function(){
+            for(let todo in toDoList)
+            {
+                removeText.innerHTML = `<del>${toDoList[todo]} </del>` ;
+            }
+        })
     }
-    console.log(toDoList);
+    
 }
 
 document.getElementById('press').addEventListener('click', (e) =>{
@@ -21,3 +27,4 @@ document.getElementById('press').addEventListener('click', (e) =>{
     addText();
     document.getElementById('data').value = '';
 })
+
