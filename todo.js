@@ -1,10 +1,11 @@
 const toDoList = [];
+const myTodo = document.createElement('div');
 const addText = () => {
     const text = document.getElementById('data').value;
     if(text !== '' && text !== ' ')
     {
         toDoList.push(text);
-        const myTodo = document.createElement('div');
+        
         myTodo.textContent = text;
         
         document.getElementById('head1').appendChild(myTodo);
@@ -15,7 +16,7 @@ const addText = () => {
         removeText.addEventListener('click',function(){
             for(let todo in toDoList)
             {
-                removeText.innerHTML = `<del>${toDoList[todo]} </del>` ;
+                myTodo.innerHTML = `<del>${toDoList[todo]} </del>` ;
             }
         })
     }
