@@ -18,9 +18,7 @@ const addText = () => {
         removeText.id = "Del";
         document.getElementById('head1').appendChild(removeText);
         removeText.addEventListener('click',function(e){
-            e.preventDefault();
-            
-            
+            e.preventDefault();          
             myTodo.innerHTML = `<del>${toDoList[i]} </del>`;
             i++;
         })
@@ -37,7 +35,6 @@ document.getElementById('press').addEventListener('click', (e) =>{
          
          toDoList[i]++;
     }
-   
     document.getElementById('data').value = '';
     
 })
