@@ -14,9 +14,9 @@ const addText = () => {
         document.getElementById('head1').appendChild(myTodo);
         const removeText = document.createElement('button'); 
         removeText.textContent='x';
-        
+        removeText.id = 'remove';
         document.getElementById('head1').appendChild(removeText);
-       
+        
     }
     
 }
@@ -34,10 +34,10 @@ document.getElementById('press').addEventListener('click', (e) =>{
 })
 
 
-// removeText.addEventListener('click', function () {
-//     for (let todo in toDoList) {
-//         console.log(todo);
-//         myTodo.innerHTML = `<del>${todo} </del>`;
-//     }
-
-// })
+document.querySelector('button')[1].addEventListener('click', function () {
+    for(const todo of toDoList){
+        if (toDoList === toDoList[todo]){
+        myTodo.innerHTML = `<del>${toDoList} </del>`;
+        }
+    }
+})
