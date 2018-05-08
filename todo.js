@@ -1,6 +1,7 @@
 let toDoList = [];
 let i = 0;
 toDoList[i];
+
 const addText = () => {
     const text = document.getElementById('data').value;
     if(text !== '' && text !== ' ')
@@ -14,8 +15,15 @@ const addText = () => {
         document.getElementById('head1').appendChild(myTodo);
         const removeText = document.createElement('button'); 
         removeText.textContent='x';
-        removeText.id = 'remove';
+        removeText.id = "Del";
         document.getElementById('head1').appendChild(removeText);
+        removeText.addEventListener('click',function(e){
+            e.preventDefault();
+            
+            
+            myTodo.innerHTML = `<del>${toDoList[i]} </del>`;
+            i++;
+        })
         
     }
     
@@ -29,15 +37,16 @@ document.getElementById('press').addEventListener('click', (e) =>{
          
          toDoList[i]++;
     }
+   
     document.getElementById('data').value = '';
     
 })
 
 
-document.querySelector('button')[1].addEventListener('click', function () {
-    for(const todo of toDoList){
-        if (toDoList === toDoList[todo]){
-        myTodo.innerHTML = `<del>${toDoList} </del>`;
-        }
-    }
-})
+// document.getElementById('Del').addEventListener('click', function () {
+//     for(const todo of toDoList){
+//         if (toDoList === toDoList[todo]){
+//         myTodo.innerHTML = `<del>${toDoList} </del>`;
+//         }
+//     }
+// })
